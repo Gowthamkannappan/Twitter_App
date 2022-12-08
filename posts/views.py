@@ -19,7 +19,7 @@ def index(request):
 
             
     # get all the posts limit =20
-    posts=Post.objects.all()[:20]
+    posts=Post.objects.all().order_by('-created_at')[:20]
 
     #show all the posts
     return render(request,'posts.html',
